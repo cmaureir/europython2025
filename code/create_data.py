@@ -1,9 +1,9 @@
 from pathlib import Path
 
-NUM_DIRECTORIES = 100
-NUM_FILES = 100
+NUM_DIRECTORIES = 1000
+NUM_FILES = 1000
 
-DATA_DIR = Path("data_small")
+DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 
 for d in range(NUM_DIRECTORIES):
