@@ -4,7 +4,7 @@ from pathlib import Path
 
 from fastglob import glob as cppglob
 from rust_glob import glob as rustglob
-from nanobind_example import glob as nanoglob
+from nanobind_glob import glob as nanoglob
 
 DIR = "data"
 
