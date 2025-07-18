@@ -8,8 +8,10 @@ from nanobind_glob import glob as nanoglob
 
 DIR = "data"
 
+glob_time = 1
 
 def benchmark(opt, recursive=False):
+    global glob_time
     print(f"{opt:5s}: ", end="")
     start = time.time()
 
@@ -29,7 +31,9 @@ def benchmark(opt, recursive=False):
         a = nanoglob(DIR, recursive)
 
     total = time.time() - start
-    print(f"{total:.5f}s")
+    print(f"{total:.5f} | {glob_time}  {((total - glob_time)/glob_time)*100}")
+    if opt == "glob":
+        glob_time = total
 
 
 print("Non recursive")
