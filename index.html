@@ -135,7 +135,7 @@
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/obama.gif">
-  <h2>Free threaded Python will <i class="red">probably not</i> make your code faster</h2>
+  <h2>More threads will <i class="red">probably not</i> make your code faster</h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
@@ -503,7 +503,7 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
     <img src="img/swift.png" />
   </div>
   <div id="right70">
-    <ul>
+    <ul style="font-size: 80%;">
       <li>2014</li>
       <li>Obj-C ('89) -> Swift</li>
       <li>Shorter/better syntax</li>
@@ -522,7 +522,7 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
     <img src="img/erlang.svg" />
   </div>
   <div id="right70">
-    <ul>
+    <ul style="font-size: 80%;">
       <li>1986</li>
       <li>Functional fault-tolerant</li>
       <li>Telecom industry anyone?</li>
@@ -541,7 +541,7 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
     <img src="img/julia.svg" />
   </div>
   <div id="right70">
-    <ul>
+    <ul style="font-size: 80%;">
       <li>2012</li>
       <li>Speed of C, feeling R/Python/Matlab</li>
       <li>JIT</li>
@@ -727,17 +727,61 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
 
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
-  TODO
   <h1>New Circle</h1>
-  New compiler that understandnew features
-  Alternative to Carbon, Cpp2, and Val ... evolution of C++ but 'a bit compatible' with C++
-  Technical debt of C++ -> cost money
-  C++ is backward compatible.
-  New features are workarounds, names are eww (co_await)
-  Claims to fix C++ mistakes by adding new features.
-    you can even change the syntax
-  cpp2:
-    alternate c++ syntax, but it's kind of a new language.
+  <div id="left">
+    <ul>
+      <li>New compiler that understand new features</li>
+      <li>Evolution of C++</li>
+      <li>Fixing "mistakes" with new features</li>
+      <li>Change syntax</li>
+  </div>
+  <div id="right">
+<pre style="font-size: 32%;width: 99%;"><code class="cpp" data-trim data-noescape>
+#feature on choice
+#include <iostream>
+
+choice IntResult {
+  Success(int),
+  Failure(std::string),
+  Cancelled,
+};
+
+template<typename T>
+void func(T obj) {
+  match(obj) {
+   .Success(auto x) => std::cout<< "Success:"<< x<< "\n";
+   .Failure(auto x) => std::cout<< "Failure:"<< x<< "\n";
+   .Cancelled       => std::terminate();
+  };
+}
+
+int main() {
+  IntResult r1 = .Success(12345);
+  IntResult r2 = .Failure("Hello");
+  IntResult r3 = .Cancelled();
+  func(r1);
+  func(r2);
+  func(r3);
+}
+</code></pre>
+  </div>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
+  <h3>New Circle - Highlights</h3>
+  <div id="left">
+  <ul style="font-size: 80%;">
+    <li class="fragment">Fewer defects</li>
+    <li class="fragment">Friendly features</li>
+    <liy class="fragment"><i class="qt-lemon">Safer</i></li>
+    <li class="fragment"><i class="qt-neon">Compatible with C++</i></li>
+  </ul>
+  <p style="font-size: 80%;"><a href="https://github.com/seanbaxter/circle/">github.com/seanbaxter/circle</a></p>
+  </div>
+  <div class="fragment" id="right">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/x7fxeNqSK2k?si=W4HkD0aLU5nfqTQE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p style="font-size: 40%;"> Sean Baxter @Bloomberg: Circle Fixes Defects, Makes C++ Language Safer & More Productive </p>
+  </div>
 </section>
 
 
@@ -957,7 +1001,7 @@ main: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linke
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_rust.svg">
-  <h1>Adoption</h1>
+  <h1>Why we adopted it?</h1>
 </section>
 
 <section data-transition="fade-in fade-out">
@@ -982,8 +1026,7 @@ fn ep2025(_py: Python, m: &PyModule) -> PyResult<()> {
       </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_rust.svg">
-TODO
-  <h1>State of Art (tools, core systems, toolchain, kernel</h1>
+  <h1>Tools, core systems, toolchain, kernel</h1>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_rust.svg">
@@ -1148,7 +1191,7 @@ static PyObject* fastglob_glob(PyObject* self, PyObject* args, PyObject* kwds){
 </section>
 
 <section data-transition="fade-in fade-out">
-  <h3>Rust' memory/thread safety</h3>
+  <h3>Rust memory/thread safety</h3>
   <div id="left">
   <pre style="font-size: 40%; width: 90%;"><code class="c" data-trim data-noescape>
 #include &lt;stdio.h&gt;
@@ -1268,19 +1311,43 @@ Hello, world!
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_solarsystem.png">
+  <h3>LLVM</h3>
   <img style="width: 80%;" src="img/llvm_logo.png"/>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_solarsystem.png">
-  TODO
-  <h1>mojo</h1>
-  Python-flavored front-end to a llvm powerful backend in order to generate native code
-  embedded Domain-specific language (eDSL)
-  Python system language for GPU Programming
-  Interop with Python and C
-  has dependant types
-  overoptimized for AI?
-  MLIR: Multi Level Intermediate Representation
+  <h2>mojo 🔥 (1/2)</h2>
+  <p>Python<i class="qt-lemon">-flavored</i> front-end to a <i class="qt-lemon">llvm powerful backend</i> in order to generate native code</p>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/background_solarsystem.png">
+  <h2>mojo 🔥 (2/2)</h2>
+  <div id="left">
+    <ul style="font-size: 80%;" >
+      <li>embedded Domain-specific language (eDSL)</li>
+      <li>System language for GPU Programming</li>
+      <li>Dependant types</li>
+      <li>MLIR: Multi Level Intermediate Representation</li>
+    </ul>
+  </div>
+  <div id="right">
+    <pre style="font-size: 40%;width: 99%;"><code class="python" data-trim data-noescape>
+from python import Python
+
+def main():
+   print("Hello Mojo 🔥!")
+   var name: String = input("Who are you? ")
+   var greeting: String = "Hi, " + name + "!"
+   print(greeting)
+   for x in range(9, 0, -3):
+     print(x)
+
+   var _t = Python.import_module(
+    "simple_interop"
+    )
+   _t.test_interop_func()
+ </code></pre>
+  </div>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_solarsystem.png">
@@ -1413,9 +1480,9 @@ add[grid](x, y, z, x.shape[0])
   <h2>We surrender, and keep Python's syntax as an <i class="qt-lemon">idea</i> and adopt <i class="qt-neon">a new</i> Python implementation</h2>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_symbol.png">
+<section data-transition="fade-in fade-out" data-background-image="img/rainy.gif">
   <h3><i class="qt-lemon">Option 4</i></h3>
-  <h2>We rage-quit and move one.</h2>
+  <h2>We rage-quit and move one...</h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
@@ -1428,7 +1495,7 @@ add[grid](x, y, z, x.shape[0])
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
-  <h1>..the more we can<br>help <i class="qt-lemon">shaping feature.</h1>
+  <h1>..the more we can<br>help <i class="qt-lemon">shaping the future.</h1>
 </section>
     </i>
 
