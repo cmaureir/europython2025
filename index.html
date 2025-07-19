@@ -150,10 +150,25 @@
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
   <h1>Key components</h1>
-  <ul>
+  <ul style="font-size: 130%;">
     <li>Language interoperability</li>
     <li>Language evolution</li>
   </ul>
+</section>
+
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
+  <h2>Qt Bridges</h2>
+  <div id="left">
+    <img src="img/qt_white.png" />
+  </div>
+  <div id="left">
+    <ul>
+      <li>C++ Framework</li>
+      <li>Not 1:1 bindings</li>
+      <li><i class="qt-neon">Integrated with Swift, Java, C#, Rust and Python</i></li>
+      <li><a href="https://qt.io/qt-bridges">qt.io/qt-bridges</a></li>
+    </ul>
+  </div>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
@@ -730,10 +745,10 @@ p(i((1/5**.5)*(((1+5**.5)/2)**(i(a[1])+1)-((1
   <h1>New Circle</h1>
   <div id="left">
     <ul>
-      <li>New compiler that understand new features</li>
-      <li>Evolution of C++</li>
-      <li>Fixing "mistakes" with new features</li>
-      <li>Change syntax</li>
+      <li class="fragment">New compiler that understand new features</li>
+      <li class="fragment">Evolution of C++</li>
+      <li class="fragment">Fixing "mistakes" with new features</li>
+      <li class="fragment">Change syntax</li>
   </div>
   <div id="right">
 <pre style="font-size: 32%;width: 99%;"><code class="cpp" data-trim data-noescape>
@@ -786,7 +801,7 @@ int main() {
 
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
-  <h2>Wait! but we were talking about C alternatives!</h2>
+  <h2>Wait! but we were talking about <i class="qt-lemon">C alternatives</i>!</h2>
 </section>
 
 <section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
@@ -1457,25 +1472,25 @@ add[grid](x, y, z, x.shape[0])
     </p>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
   <h1>Is C <i class="qt-neon">good enough</i><br>to be the base of <i class="qt-lemon">standard Python</i>?</h1>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_symbol.png">
+<section data-transition="fade-in fade-out" data-background-image="img/background_sign.png">
   <h1>Three options for the future 🔮</h1>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_symbol.png">
+<section data-transition="fade-in fade-out" data-background-image="img/background_sign.png">
   <h3><i class="qt-lemon">Option 1</i></h3>
   <h2>The internals /continue to/ get improved with new features and techniques to push python to be <i class="qt-lemon">better*</i></h2>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_symbol.png">
+<section data-transition="fade-in fade-out" data-background-image="img/background_sign.png">
   <h3><i class="qt-lemon">Option 2</i></h3>
   <h2>Another <i class="qt-lemon">&lt;lang&gt;</i> comes into play, and we start over re-written our tools and modules in that.</h2>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_symbol.png">
+<section data-transition="fade-in fade-out" data-background-image="img/background_sign.png">
   <h3><i class="qt-lemon">Option 3</i></h3>
   <h2>We surrender, and keep Python's syntax as an <i class="qt-lemon">idea</i> and adopt <i class="qt-neon">a new</i> Python implementation</h2>
 </section>
@@ -1485,17 +1500,17 @@ add[grid](x, y, z, x.shape[0])
   <h2>We rage-quit and move one...</h2>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
   <h1 class="r-fit-text">Python is <i class="red">not</i> perfect</h1>
   <h1 class="r-fit-text">and that's <i class="qt-neon">fine</i>! 🎉</h1>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
-  <h1>The more languages we know...</h1>
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
+  <h1>The more languages we understand...</h1>
 </section>
 
-<section data-transition="fade-in fade-out" data-background-image="img/background_stars.png">
-  <h1>..the more we can<br>help <i class="qt-lemon">shaping the future.</h1>
+<section data-transition="fade-in fade-out" data-background-image="img/background_stars.svg">
+  <h1>..the more we can<br>shape <i class="qt-lemon">the future</i> of Python.</h1>
 </section>
     </i>
 
@@ -1506,13 +1521,12 @@ add[grid](x, y, z, x.shape[0])
     Dr. <i class="qt-lemon">Cristián</i> Maureira-Fredes<br>
     <hr class="yellow-line"/>
     <span>@cmaureir</span><br/>
-     <img class="clean-img" src="img/twitter.png">
     <img class="clean-img" src="img/bluesky.png">
     <img class="clean-img" src="img/mastodon.png">
     <img class="clean-img" src="img/github_white.png">
     <img class="clean-img" src="img/linkedin.png">
     <hr class="yellow-line"/>
-    <a href="https://maureira.dev/ep2025">maureira.dev/ep2025</a>
+    <a href="https://maureira.dev/ep2025">github.com/cmaureir/europython2025</a>
     </p>
   </div>
 </section>
